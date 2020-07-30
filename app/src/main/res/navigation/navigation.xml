@@ -15,7 +15,7 @@
         android:id="@+id/contactFragment"
         android:name="com.example.android.navigation.RulesFragment"
         android:label="About"
-        tools:layout="@layout/fragment_rules" />
+        tools:layout="@layout/fragment_contact" />
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.android.navigation.AboutFragment"

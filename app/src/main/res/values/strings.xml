@@ -2,5 +2,7 @@
     <string name="app_name">First App TNy-Kk</string>
     <string name="contact">Contact</string>
     <string name="about">About</string>
-    <string name="FirstProfile">TODO</string>
+    <string name="firstProfile">FirstProfile</string>
+    <string name="about_name">MR.THANAYUT MUNGUMKLANG</string>
+    <string name="student_code">Student code : 61162110286-4</string>
 </resources>
