@@ -4,5 +4,14 @@
     <string name="about">About</string>
     <string name="firstProfile">FirstProfile</string>
     <string name="about_name">MR.THANAYUT MUNGUMKLANG</string>
-    <string name="student_code">Student code : 61162110286-4</string>
+    <string name="aboutprofile">AboutProfile</string>
+    <string name="abouts">
+        Nickname : kuka
+        \n\nStudent code : 61162110286-4
+        \n\neducation : Rajamangala University of Technology Isan, RMUTI
+        \n\nDate of Birthday : 9 April 1999
+        \nAge 21 years
+    </string>
+
+
 </resources>

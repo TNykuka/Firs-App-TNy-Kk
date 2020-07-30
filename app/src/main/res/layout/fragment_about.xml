@@ -1,52 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true"
-    tools:context="com.example.android.navigation.AboutFragment">
-
-
+    tools:context="com.example.android.navigation.TitleFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/aboutConstraint"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <!--<TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/abril_fatface"
-            android:lineSpacingExtra="8sp"
-            android:text="@string/about_name"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/name_Size"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <ImageView
+            android:id="@+id/aboutprofile"
+            android:layout_width="177dp"
+            android:layout_height="141dp"
+            android:layout_marginTop="28dp"
+            android:src="@drawable/aboutprofile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.243" />
+            android:contentDescription="@string/aboutprofile" />
 
         <TextView
-            android:id="@+id/student_code"
-            android:layout_width="wrap_content"
-            android:layout_height="19dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
+            android:id="@+id/aboutname"
+            android:layout_width="315dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/abril_fatface"
-            android:text="@string/student_code"
+            android:text="@string/about_name"
             android:textColor="@android:color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="@dimen/name_Size"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.197"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/name"
-            app:layout_constraintVertical_bias="0.018" />
-            -->
+            app:layout_constraintTop_toBottomOf="@+id/aboutprofile" />
 
+        <ScrollView
+            android:layout_width="316dp"
+            android:layout_height="310dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/aboutname">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/abouts"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/abouts" />
+        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</layout>
