@@ -5,22 +5,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.android.navigation.TitleFragment">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/aboutConstraint"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/bgtitle"
+        >
 
         <ImageView
             android:id="@+id/FirstProfile"
-            android:layout_width="0dp"
-            android:layout_height="368dp"
+            android:layout_width="198dp"
+            android:layout_height="172dp"
             android:contentDescription="@string/firstProfile"
             android:src="@drawable/firstprofile"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.297" />
+            app:layout_constraintVertical_bias="0.334" />
+
+        <Button
+            android:id="@+id/play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/play"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/FirstProfile"
+            app:layout_constraintVertical_bias="0.1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
