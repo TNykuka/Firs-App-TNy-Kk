@@ -68,5 +68,30 @@
             app:layout_constraintStart_toEndOf="@+id/facebook"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.177" />
+
+        <TextView
+            android:id="@+id/name_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="@string/name_line"
+            android:textSize="@dimen/name_contact"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.154"
+            app:layout_constraintStart_toEndOf="@+id/line"
+            app:layout_constraintTop_toBottomOf="@+id/name_facebook" />
+
+        <TextView
+            android:id="@+id/name_ig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_ig"
+            android:textSize="@dimen/name_contact"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.166"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/name_line"
+            app:layout_constraintVertical_bias="0.087" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
