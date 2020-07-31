@@ -3,4 +3,6 @@
 
     <dimen name="name_Size">20sp</dimen>
     <dimen name="abouts">18sp</dimen>
+
+    <dimen name="name_contact">25sp</dimen>
 </resources>

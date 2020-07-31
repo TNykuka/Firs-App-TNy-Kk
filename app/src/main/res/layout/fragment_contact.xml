@@ -11,5 +11,62 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/contactprofile"/>
+        android:background="@drawable/contactprofile">
+
+        <ImageView
+            android:id="@+id/facebook"
+            android:layout_width="45dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="87dp"
+            android:layout_marginEnd="320dp"
+            android:layout_marginBottom="458dp"
+            android:contentDescription="@string/facebook"
+            android:src="@drawable/facebook"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/line"
+            android:layout_width="45dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="320dp"
+            android:src="@drawable/line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/facebook"
+            android:contentDescription="@string/line" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="45dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="320dp"
+            android:layout_marginBottom="321dp"
+            android:src="@drawable/ig"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line"
+            android:contentDescription="@string/ig" />
+
+        <TextView
+            android:id="@+id/name_facebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_facebook"
+            android:textSize="@dimen/name_contact"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.173"
+            app:layout_constraintStart_toEndOf="@+id/facebook"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.177" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -13,6 +13,12 @@
         \nAge 21 years
     </string>
     <string name="play">Play</string>
+    <string name="facebook">facebook</string>
+    <string name="line">line</string>
+    <string name="name_line">kuka50</string>
+    <string name="name_facebook">"คู'ก ่ะ คูก้า"</string>
+    <string name="name_ig">tny_kuka</string>
+    <string name="ig">ig</string>
 
 
 </resources>
