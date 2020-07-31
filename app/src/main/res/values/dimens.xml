@@ -5,4 +5,5 @@
     <dimen name="abouts">18sp</dimen>
 
     <dimen name="name_contact">25sp</dimen>
+    <dimen name="contact">35sp</dimen>
 </resources>
