@@ -20,5 +20,10 @@
     <string name="name_ig">tny_kuka</string>
     <string name="ig">ig</string>
 
+    <string name="to_add_a_contact">To add a contact?</string>
+
+    <string name="start">Start</string>
+    <string name="how_was_hour_sleep">How was your sleep?</string>
+
 
 </resources>

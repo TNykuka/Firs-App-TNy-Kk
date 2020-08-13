@@ -6,4 +6,10 @@
 
     <dimen name="name_contact">25sp</dimen>
     <dimen name="contact">35sp</dimen>
+
+    <dimen name="layout_margin">16dp</dimen>
+    <dimen name="text_size">20sp</dimen>
+    <dimen name="small_padding">8dp</dimen>
+
+    <dimen name="margin">16dp</dimen>
 </resources>
