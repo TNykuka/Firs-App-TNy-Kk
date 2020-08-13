@@ -10,4 +10,7 @@
         android:id="@+id/contactFragment"
         android:icon="@drawable/contact"
         android:title="@string/contact" />
+    <item
+        android:id="@+id/contactListFragment"
+        android:title="@string/contactlist" />
 </menu>
