@@ -16,6 +16,7 @@ class ContactListFragment : Fragment() {
 
         val application = requireNotNull(this.activity).application
         val dataSource = ListDatabase.getInstance(application).ListDatabaseDao
+        val viewModelFactory = ContactListTrackerViewModelFactory(dataSource, application)
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_contact_list, container, false)
