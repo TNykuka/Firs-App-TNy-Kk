@@ -23,12 +23,13 @@ class ContactListFragment : Fragment() {
         val dataSource = ListDatabase.getInstance(application).ListDatabaseDao
         val viewModelFactory = ContactListTrackerViewModelFactory(dataSource, application)
 
-        val sleepTrackerViewModel =
+        val listTrackerViewModel =
                 ViewModelProvider(
                         this, viewModelFactory).get(ContactTrackerViewModel::class.java)
 
         // Inflate the layout for this fragment
-
+        binding.setLifecycleOwner(this)
+        binding.listTrackerViewModel = listTrackerViewModel
 
         return binding.root
     }
