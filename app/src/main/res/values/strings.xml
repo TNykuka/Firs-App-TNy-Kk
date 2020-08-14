@@ -26,5 +26,7 @@
     <string name="add">Add</string>
     <string name="how_was_hour_sleep">How was your sleep?</string>
 
+    <string name="add_name"><![CDATA[<b>Name:</b>]]></string>
+
 
 </resources>
