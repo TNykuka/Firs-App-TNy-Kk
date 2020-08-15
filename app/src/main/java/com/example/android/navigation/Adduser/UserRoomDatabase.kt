@@ -4,17 +4,21 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import kotlinx.coroutines.CoroutineScope
 
 @Database(entities = arrayOf(User::class), version = 1, exportSchema = false)
 abstract class UserRoomDatabase : RoomDatabase() {
 
-    abstract fun wordDao(): UserDao
+    abstract fun userDao(): UserDao
 
     companion object {
         @Volatile
         private var INSTANCE: UserRoomDatabase? = null
 
-        fun getDatabase(context: Context): UserRoomDatabase {
+        fun getDatabase(
+                context: Context,
+                scope: CoroutineScope
+        ): UserRoomDatabase {
             val tempInstance = INSTANCE
             if (tempInstance != null) {
                 return tempInstance

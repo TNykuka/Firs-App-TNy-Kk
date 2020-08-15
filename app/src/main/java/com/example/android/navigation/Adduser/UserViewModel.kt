@@ -14,7 +14,8 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
     val allWords: LiveData<List<User>>
 
     init {
-        val usersDao = UserRoomDatabase.getDatabase(application).wordDao()
+        val usersDao = UserRoomDatabase.getDatabase(application, viewModelScope).userDao()
+
         repository = UserRepository(usersDao)
         allWords = repository.allWords
     }
