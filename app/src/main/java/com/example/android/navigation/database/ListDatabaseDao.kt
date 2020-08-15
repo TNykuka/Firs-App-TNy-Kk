@@ -3,22 +3,18 @@ package com.example.android.navigation.database
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import androidx.room.Update
 
 @Dao
 interface ListDatabaseDao{
 
-    @Insert
-    suspend fun insertSubscriber(subscriber: ListNight) : Long
+    @Query("SELECT * from daily_list_quality_table ORDER BY list_name ASC")
+    fun getAlphabetizedWords(): List<ListNight>
 
-    @Update
-    suspend fun updateSubscriber(subscriber: ListNight) : Int
-
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insert(listNight: ListNight)
 
     @Query("DELETE FROM daily_list_quality_table")
-    suspend fun deleteAll() : Int
-
-    @Query("SELECT * FROM daily_list_quality_table")
-    fun getAllSubscribers():LiveData<List<ListNight>>
+    suspend fun deleteAll()
 }
