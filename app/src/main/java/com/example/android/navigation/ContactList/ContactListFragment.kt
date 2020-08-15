@@ -29,7 +29,7 @@ class ContactListFragment : Fragment() {
 
         // Inflate the layout for this fragment
         binding.setLifecycleOwner(this)
-        binding.listTrackerViewModel = listTrackerViewModel
+        binding.ContactListFragment = listTrackerViewModel
 
         return binding.root
     }
