@@ -21,9 +21,4 @@
         android:name="com.example.android.navigation.AboutFragment"
         android:label="About"
         tools:layout="@layout/fragment_about" />
-    <fragment
-        android:id="@+id/contactListFragment"
-        android:name="com.example.android.navigation.ContactList.ContactListFragment"
-        android:label="contactList"
-        tools:layout="@layout/fragment_contact_list" />
 </navigation>
