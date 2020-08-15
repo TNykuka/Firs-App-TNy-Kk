@@ -1,36 +1,39 @@
 package com.example.android.navigation.ContactList
 
-import android.os.Bundle
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.example.android.navigation.R
-import com.example.android.navigation.database.ListDatabase
-import com.example.android.navigation.databinding.FragmentContactListBinding
+import com.example.android.navigation.database.ListNight
 
-class ContactListFragment : Fragment() {
+class ContactListFragment internal constructor(
+        context: Context
+) : RecyclerView.Adapter<ContactListFragment.ContactViewHolder>() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    private val inflater: LayoutInflater = LayoutInflater.from(context)
+    private var lists = emptyList<ListNight>()
 
-        val binding: FragmentContactListBinding = DataBindingUtil.inflate(
-                inflater, R.layout.fragment_contact_list, container, false)
-
-        val application = requireNotNull(this.activity).application
-        val dataSource = ListDatabase.getInstance(application).ListDatabaseDao
-        val viewModelFactory = ContactListTrackerViewModelFactory(dataSource, application)
-
-        val listTrackerViewModel =
-                ViewModelProvider(
-                        this, viewModelFactory).get(ContactTrackerViewModel::class.java)
-
-        // Inflate the layout for this fragment
-        binding.setLifecycleOwner(this)
-        binding.ContactListFragment = listTrackerViewModel
-
-        return binding.root
+    inner class ContactViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val wordItemView: TextView = itemView.findViewById(R.id.textView)
     }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
+        val itemView = inflater.inflate(R.layout.fragment_contact_list, parent, false)
+        return ContactViewHolder(itemView)
+    }
+
+    override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
+        val current = lists[position]
+        holder.wordItemView.text = current.name
+    }
+
+    internal fun setWords(lists: List<ListNight>) {
+        this.lists = lists
+        notifyDataSetChanged()
+    }
+
+    override fun getItemCount() = lists.size
 }
