@@ -27,6 +27,8 @@
     <string name="how_was_hour_sleep">How was your sleep?</string>
 
     <string name="add_name"><![CDATA[<b>Name:</b>]]></string>
+    <string name="button_save">Save</string>
+    <string name="hint_word">Word…</string>
 
 
 </resources>
