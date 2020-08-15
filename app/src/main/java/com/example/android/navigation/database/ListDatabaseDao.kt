@@ -10,20 +10,15 @@ import androidx.room.Update
 interface ListDatabaseDao{
 
     @Insert
-    fun insert(night: ListNight)
+    suspend fun insertSubscriber(subscriber: ListNight) : Long
 
     @Update
-    fun update(night: ListNight)
+    suspend fun updateSubscriber(subscriber: ListNight) : Int
 
-    @Query("SELECT * from daily_list_quality_table WHERE namelistId= :key")
-    fun get(key: Long): ListNight?
 
     @Query("DELETE FROM daily_list_quality_table")
-    fun clear()
+    suspend fun deleteAll() : Int
 
-    @Query("SELECT * FROM daily_list_quality_table ORDER BY namelistId DESC LIMIT 1")
-    fun getTonight(): ListNight?
-
-    @Query("SELECT * FROM daily_list_quality_table ORDER BY namelistId DESC")
-    fun getAllNights(): LiveData<List<ListNight>>
+    @Query("SELECT * FROM daily_list_quality_table")
+    fun getAllSubscribers():LiveData<List<ListNight>>
 }

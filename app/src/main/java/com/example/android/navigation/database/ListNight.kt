@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "daily_list_quality_table")
 data class ListNight(
         @PrimaryKey(autoGenerate = true)
-        @ColumnInfo(name = "subscriber_name")
+        @ColumnInfo(name = "list_name")
         var id : Int,
 
         @ColumnInfo(name = "subscriber_id")
