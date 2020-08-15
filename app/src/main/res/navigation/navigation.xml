@@ -21,4 +21,10 @@
         android:name="com.example.android.navigation.AboutFragment"
         android:label="About"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/activityMainAdduser"
+        android:name="com.example.android.navigation.Adduser.ActivityMainAdduser"
+        android:label="ActivityMainAdduser"
+        tools:layout="@layout/activity_main_adduser"/>
+
 </navigation>

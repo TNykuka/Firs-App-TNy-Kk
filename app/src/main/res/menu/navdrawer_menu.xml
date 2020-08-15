@@ -11,6 +11,6 @@
         android:icon="@drawable/contact"
         android:title="@string/contact" />
     <item
-        android:id="@+id/contactListFragment"
-        android:title="@string/contactlist" />
+        android:id="@+id/activityMainAdduser"
+        android:title="@string/adduser" />
 </menu>
