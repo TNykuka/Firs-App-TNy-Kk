@@ -11,7 +11,7 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository: UserRepository
 
-    val allWords: LiveData<List<Usar>>
+    val allWords: LiveData<List<User>>
 
     init {
         val usersDao = UserRoomDatabase.getDatabase(application).wordDao()
@@ -20,7 +20,7 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
-    fun insert(user : Usar) = viewModelScope.launch(Dispatchers.IO) {
+    fun insert(user : User) = viewModelScope.launch(Dispatchers.IO) {
         repository.insert(user)
     }
 }

@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 
 class UserRepository(private val wordDao: UserDao) {
 
-    val allWords: LiveData<List<Usar>> = wordDao.getAlphabetizedUsers()
+    val allWords: LiveData<List<User>> = wordDao.getAlphabetizedUsers()
 
-    suspend fun insert(user : Usar) {
+    suspend fun insert(user : User) {
         wordDao.insert(user)
     }
 }
