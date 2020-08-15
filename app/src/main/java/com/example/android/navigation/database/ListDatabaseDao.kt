@@ -10,7 +10,7 @@ import androidx.room.Query
 interface ListDatabaseDao{
 
     @Query("SELECT * from daily_list_quality_table ORDER BY list_name ASC")
-    fun getAlphabetizedWords(): List<ListNight>
+    fun getAlphabetizedLists(): LiveData<List<ListNight>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(listNight: ListNight)
