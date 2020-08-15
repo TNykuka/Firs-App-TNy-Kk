@@ -8,24 +8,28 @@ import androidx.room.RoomDatabase
 @Database(entities = [ListNight::class],version = 1)
 abstract class ListDatabase : RoomDatabase() {
 
-    abstract val listDatabaseDao : ListDatabaseDao
+    abstract fun listDatabaseDao() : ListDatabaseDao
 
-    companion object{
+    companion object {
+        // Singleton prevents multiple instances of database opening at the
+        // same time.
         @Volatile
-        private var INSTANCE : ListDatabase? = null
-        fun getInstance(context: Context):ListDatabase{
-            synchronized(this){
-                var instance = INSTANCE
-                if(instance==null){
-                    instance = Room.databaseBuilder(
-                            context.applicationContext,
-                            ListDatabase::class.java,
-                            "subscriber_data_database"
-                    ).build()
-                }
+        private var INSTANCE: ListDatabase? = null
+
+        fun getDatabase(context: Context): ListDatabase {
+            val tempInstance = INSTANCE
+            if (tempInstance != null) {
+                return tempInstance
+            }
+            synchronized(this) {
+                val instance = Room.databaseBuilder(
+                        context.applicationContext,
+                        ListDatabase::class.java,
+                        "word_database"
+                ).build()
+                INSTANCE = instance
                 return instance
             }
         }
-
     }
 }
