@@ -5,32 +5,27 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [ListNight::class], version = 1, exportSchema = false)
-abstract class ListDatabase : RoomDatabase() {
+@Database(entities = [ListNight::class],version = 1)
+abstract class SubscriberDatabase : RoomDatabase() {
 
-    abstract val ListDatabaseDao: ListDatabaseDao
+    abstract val subscriberDAO : ListDatabaseDao
 
-    companion object {
-
+    companion object{
         @Volatile
-        private var INSTANCE: ListDatabase? = null
-
-        fun getInstance(context: Context): ListDatabase {
-            synchronized(this) {
+        private var INSTANCE : SubscriberDatabase? = null
+        fun getInstance(context: Context):SubscriberDatabase{
+            synchronized(this){
                 var instance = INSTANCE
-
-                if (instance == null) {
+                if(instance==null){
                     instance = Room.databaseBuilder(
                             context.applicationContext,
-                            ListDatabase::class.java,
-                            "sleep_history_database"
-                    )
-                            .fallbackToDestructiveMigration()
-                            .build()
-                    INSTANCE = instance
+                            SubscriberDatabase::class.java,
+                            "subscriber_data_database"
+                    ).build()
                 }
                 return instance
             }
         }
+
     }
 }
