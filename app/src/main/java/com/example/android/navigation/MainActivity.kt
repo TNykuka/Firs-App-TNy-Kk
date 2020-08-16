@@ -16,22 +16,35 @@
 
 package com.example.android.navigation
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.android.navigation.Adduser.User
+import com.example.android.navigation.Adduser.NewUserActivity
+import com.example.android.navigation.Adduser.UserListAdapter
+import com.example.android.navigation.Adduser.UserViewModel
 import com.example.android.navigation.databinding.ActivityMainBinding
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
 
-
+    private val newUserActivityRequestCode = 1
+    private lateinit var userViewModel: UserViewModel
     private lateinit var drawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        @Suppress("UNUSED_VARIABLE")
+        setContentView(R.layout.activity_main)
+
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this,
                 R.layout.activity_main)
 
@@ -42,10 +55,29 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this,navController, drawerLayout)
 
         NavigationUI.setupWithNavController(binding.navView, navController)
+
+
     }
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.myNavHostFragment)
         return NavigationUI.navigateUp(navController, drawerLayout)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == newUserActivityRequestCode && resultCode == Activity.RESULT_OK) {
+            data?.getStringExtra(NewUserActivity.EXTRA_REPLY)?.let {
+                val user = User(it)
+                userViewModel.insert(user)
+            }
+        } else {
+            Toast.makeText(
+                    applicationContext,
+                    R.string.empty_not_saved,
+                    Toast.LENGTH_LONG
+            ).show()
+        }
     }
 
 }

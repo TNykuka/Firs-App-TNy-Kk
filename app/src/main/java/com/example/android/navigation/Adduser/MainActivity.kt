@@ -12,10 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android.navigation.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class AddMainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity() {
 
     private val newUserActivityRequestCode = 1
-    private lateinit var userViewModel :UserViewModel
+    private lateinit var userViewModel: UserViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +34,7 @@ class AddMainActivity : AppCompatActivity(){
 
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener {
-            val intent = Intent(this@AddMainActivity, NewUserActivity::class.java)
+            val intent = Intent(this@MainActivity, NewUserActivity::class.java)
             startActivityForResult(intent, newUserActivityRequestCode)
         }
     }
