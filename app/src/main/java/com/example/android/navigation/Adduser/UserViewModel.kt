@@ -17,7 +17,7 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
         val usersDao = UserRoomDatabase.getDatabase(application, viewModelScope).userDao()
 
         repository = UserRepository(usersDao)
-        allWords = repository.allWords
+        allWords = repository.allUsers
     }
 
 
