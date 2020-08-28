@@ -8,6 +8,7 @@ import androidx.room.RoomDatabase
 @Database(entities = [Contact::class], version = 1, exportSchema = false)
 abstract class Database : RoomDatabase(){
     abstract val databaseDao: DatabaseDAO
+
     companion object{
         @Volatile
         private var INSTANCE: com.example.android.navigation.Contactdatabase.Database? = null

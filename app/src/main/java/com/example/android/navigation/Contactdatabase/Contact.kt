@@ -11,5 +11,7 @@ data class Contact (
         @ColumnInfo(name = "name")
         var name: String = "unnamed",
         @ColumnInfo(name = "phone")
-        var phone: String = ""
+        var phone: String = "unnamed",
+        @ColumnInfo(name = "email")
+        var e_mail: String = "unnamed"
 )

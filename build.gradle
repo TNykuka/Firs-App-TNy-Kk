@@ -1,19 +1,11 @@
 buildscript {
-    ext {
-        roomVersion = '2.2.5'
-        navigationVersion = '1.0.0-rc02'
         ext.kotlin_version = "1.4.0"
-        archLifecycleVersion = '1.1.1'
-        gradleVersion = '4.0.1'
-        supportlibVersion = '1.0.0-rc03'
-        dataBindingCompilerVersion = gradleVersion // Always need to be the same.
-    }
     repositories {
         google()
         jcenter()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:$gradleVersion"
+        classpath "com.android.tools.build:gradle:4.0.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
