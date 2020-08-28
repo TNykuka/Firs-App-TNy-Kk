@@ -13,7 +13,7 @@
         tools:layout="@layout/fragment_title" />
     <fragment
         android:id="@+id/contactFragment"
-        android:name="com.example.android.navigation.Contactdatabase.ContactFragment"
+        android:name="com.example.android.navigation.ContactFragment"
         android:label="Contact"
         tools:layout="@layout/fragment_contact" />
     <fragment
